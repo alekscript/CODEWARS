@@ -9,9 +9,8 @@ function factorialize(num) {
     let sum = 1;
     for (let i = 1; i<=num; i++) {
       sum *= i;
-      console.log(sum);
     }
-    return num;
+    return sum;
   }
   
-  factorialize(10);
+  factorialize(5);
