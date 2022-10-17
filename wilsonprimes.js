@@ -1,17 +1,11 @@
-function amIWilson(p) {
-    let numberW = 0;
-    let fact = p - 1;
-    for(let i = 1; i < p-1; i++){
-     fact = fact * i;
+function amIWilson(p) {    
+    p = BigInt(p);
+    return ((factorial(p-1n)) + 1n) % (p * p) == 0n;
+}
+
+function factorial(x){
+    if (x <= 1n) {
+        return 1n;
     }
-    console.log(fact);
-    numberW = (fact + 1) / p;
-    console.log(numberW);
-    if (Number.isInteger(numberW)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  
-   console.log(amIWilson(5));
+    return x * factorial(x - 1n);
+}
